@@ -1,0 +1,21 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "target": "es5",
+        "lib": ["es6", "dom"],
+        "moduleResolution": "node",
+        "allowSyntheticDefaultImports": true,
+        "esModuleInterop": true,
+        "jsx": "react",
+        "allowJs": false,
+        "strict": true,
+        "outDir": "./lib",
+        "removeComments": true,
+        "declaration": true,
+        "sourceMap": true
+    },
+    "files": [
+        "src/index.ts",
+        "src/types.ts"
+    ]
+}

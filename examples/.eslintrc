@@ -1,0 +1,14 @@
+{
+    "rules": {
+        "import/no-extraneous-dependencies": "off",
+        "import/no-unresolved": ["error", { "ignore": ["react-svg-gps"] }],
+        "react/jsx-filename-extension": ["error", { "extensions": [".jsx"] }]
+    },
+    "settings": {
+        "import/resolver": {
+            "node": {
+                "extensions": [".js", ".jsx"]
+            }
+        }
+    }
+}
