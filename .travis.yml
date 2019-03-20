@@ -1,7 +1,9 @@
 language: node_js
 node_js: 'node'
 branches:
-  only: master
+  only:
+  - master
+  - /^v\d+\.\d+\.\d+$/
 cache: yarn
 script:
   - yarn test
