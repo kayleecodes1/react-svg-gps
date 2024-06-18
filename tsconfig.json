@@ -1,21 +1,17 @@
 {
     "compilerOptions": {
-        "module": "commonjs",
-        "target": "es5",
-        "lib": ["es6", "dom"],
-        "moduleResolution": "node",
-        "allowSyntheticDefaultImports": true,
+        "baseUrl": ".",
         "esModuleInterop": true,
         "jsx": "react",
-        "allowJs": false,
+        "lib": ["ESNext", "DOM", "DOM.Iterable"],
+        "module": "NodeNext",
+        "moduleResolution": "NodeNext",
+        "paths": {
+            "@/*": ["src/*"]
+        },
+        "resolveJsonModule": true,
         "strict": true,
-        "outDir": "./lib",
-        "removeComments": true,
-        "declaration": true,
-        "sourceMap": true
+        "target": "ESNext"
     },
-    "files": [
-        "src/index.ts",
-        "src/types.ts"
-    ]
+    "files": ["src/index.ts"]
 }

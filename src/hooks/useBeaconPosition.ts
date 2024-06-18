@@ -1,15 +1,16 @@
-import React from 'react';
-import { BeaconContext } from '../components/BeaconProvider';
+import { useContext, useLayoutEffect, useState } from 'react';
+import { BeaconContext } from '@/components/BeaconProvider';
+import { Point } from '@/typings/dataStructures';
 
 interface UseBeaconPositionConfig {
-    id : string;
+    id: string;
 }
 
-const useBeaconPosition = ({ id } : UseBeaconPositionConfig) : Point | null => {
-    const beaconStore = React.useContext(BeaconContext);
-    const [point, setPoint] = React.useState(null);
+const useBeaconPosition = ({ id }: UseBeaconPositionConfig): Point | null => {
+    const beaconStore = useContext(BeaconContext);
+    const [point, setPoint] = useState(null);
 
-    React.useLayoutEffect(() => {
+    useLayoutEffect(() => {
         beaconStore.subscribe(id, setPoint);
         return () => {
             beaconStore.unsubscribe(id, setPoint);

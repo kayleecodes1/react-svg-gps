@@ -1,0 +1,31 @@
+name: build
+on:
+    push:
+        branches:
+            - master
+jobs:
+    main:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Setup Node.js
+              uses: actions/setup-node@v4
+              with:
+                  node-version: 20
+            - name: Checkout
+              uses: actions/checkout@v4
+            - name: Install and Build
+              run: |
+                  npm ci
+                  npm run build
+            - name: Test
+              run: npm run test
+            - name: Coveralls
+              uses: coverallsapp/github-action@v2
+            - name: Build Storybook
+              run: npm run build:storybook
+            - name: Deploy Storybook
+              uses: JamesIves/github-pages-deploy-action@releases/v4
+              with:
+                  ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN  }}
+                  BRANCH: gh-pages
+                  FOLDER: dist-storybook

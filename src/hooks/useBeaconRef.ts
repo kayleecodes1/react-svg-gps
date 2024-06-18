@@ -1,29 +1,30 @@
-import React from 'react';
-import getGlobalPoint from '../utils/getGlobalPoint';
-import { BeaconContext } from '../components/BeaconProvider';
+import React, { useContext, useLayoutEffect, useRef } from 'react';
+import { BeaconContext } from '@/components/BeaconProvider';
+import { Point } from '@/typings/dataStructures';
+import getGlobalPoint from '@/utilities/getGlobalPoint';
 
 interface UseBeaconRefConfig {
-    id : string;
-    anchor ?: Point;
-    offset ?: Point;
+    id: string;
+    anchor?: Point;
+    offset?: Point;
 }
 
-const useBeaconRef = ({
+const useBeaconRef = <T extends SVGGraphicsElement>({
     id,
     anchor = { x: 0.5, y: 0.5 },
     offset = { x: 0, y: 0 },
-} : UseBeaconRefConfig) : React.RefObject<SVGGraphicsElement> => {
-    const beaconStore = React.useContext(BeaconContext);
-    const ref = React.useRef<SVGGraphicsElement>(null);
+}: UseBeaconRefConfig): React.RefObject<T> => {
+    const beaconStore = useContext(BeaconContext);
+    const ref = useRef<T | null>(null);
 
-    React.useLayoutEffect(() => {
+    useLayoutEffect(() => {
         beaconStore.registerBeacon(id);
         return () => {
             beaconStore.unregisterBeacon(id);
         };
     }, []);
 
-    React.useLayoutEffect(() => {
+    useLayoutEffect(() => {
         if (!ref.current) {
             beaconStore.reportBeaconPoint(id, null);
             return;

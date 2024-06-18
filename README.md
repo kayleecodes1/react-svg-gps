@@ -10,11 +10,11 @@
 
 ---
 
-[![build](https://img.shields.io/travis/com/kylepixel/react-svg-gps.svg)](https://travis-ci.com/kylepixel/react-svg-gps)
-[![coverage](https://img.shields.io/coveralls/github/kylepixel/react-svg-gps.svg)](https://coveralls.io/github/kylepixel/react-svg-gps)
+![build](https://github.com/kayleecodes1/react-svg-gps/actions/workflows/build.yml/badge.svg)
+[![coverage](https://img.shields.io/coveralls/github/kayleecodes1/react-svg-gps.svg)](https://coveralls.io/github/kayleecodes1/react-svg-gps)
 [![npm](https://img.shields.io/npm/v/react-svg-gps.svg?color=%230382f8)](https://www.npmjs.com/package/react-svg-gps)
 [![minzipped size](https://img.shields.io/bundlephobia/minzip/react-svg-gps.svg?color=%230382f8)](https://bundlephobia.com/result?p=react-svg-gps)
-[![license](https://img.shields.io/npm/l/react-svg-gps.svg?color=%230382f8)](https://github.com/kylepixel/react-svg-gps/blob/master/LICENSE)
+[![license](https://img.shields.io/npm/l/react-svg-gps.svg?color=%230382f8)](https://github.com/kayleecodes1/react-svg-gps/blob/master/LICENSE)
 
 ## The Problem
 
@@ -30,12 +30,10 @@ It utilizes React Hooks for maximum composability.
 
 ## Installation
 
-React SVG GPS requires **React 16.8 or later**.
+React SVG GPS requires **React 18 or later**.
 
 ```sh
-npm install --save react-svg-gps
-# or
-yarn add react-svg-gps
+npm install react-svg-gps
 ```
 
 ## Basic Usage
@@ -72,11 +70,11 @@ const App = () => (
 
 ## More Examples
 
-[![storybook](https://cdn.jsdelivr.net/gh/storybooks/brand@master/badge/badge-storybook.svg)](http://kylepixel.github.io/react-svg-gps/)
+[![storybook](https://cdn.jsdelivr.net/gh/storybooks/brand@master/badge/badge-storybook.svg)](http://kayleecodes1.github.io/react-svg-gps/)
 
-You can find several usage examples compiled as a Storybook by clicking the badge above. The source code for these examples can be found [here](https://github.com/kylepixel/react-svg-gps/tree/master/examples).
+You can find several usage examples compiled for Storybook by clicking the badge above. The source code for these examples can be found [here](https://github.com/kayleecodes1/react-svg-gps/tree/master/examples).
 
-If you want to run and modify these examples locally, just clone this repository and run `yarn storybook`.
+If you want to run and modify these examples locally, just clone this repository and run `npm run storybook`.
 
 ## API
 

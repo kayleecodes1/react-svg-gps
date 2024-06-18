@@ -1,14 +1,15 @@
-import React from 'react';
-import BeaconStore from '../models/BeaconStore';
+import React, { useMemo } from 'react';
+import BeaconStore from '@/models/BeaconStore';
 
 export const BeaconContext = React.createContext(new BeaconStore());
 
 interface BeaconProviderProps {
-    children ? : React.ReactNode;
+    children?: React.ReactNode;
 }
 
-const BeaconProvider : React.SFC<BeaconProviderProps> = ({ children }) : JSX.Element => {
-    const [beaconStore] = React.useState(new BeaconStore());
+const BeaconProvider: React.FC<BeaconProviderProps> = ({ children }) => {
+    const beaconStore = useMemo(() => new BeaconStore(), []);
+
     return (
         <BeaconContext.Provider value={beaconStore}>
             {children}
