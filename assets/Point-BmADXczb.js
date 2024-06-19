@@ -1,0 +1,1 @@
+import{R as e}from"./index-CDs2tPxN.js";import{a as s}from"./Container-DVKdD_iu.js";const i=e.forwardRef(({id:o,x:t,y:a,style:c},n)=>{const r=s({id:o});return e.useImperativeHandle(n,()=>r.current),e.createElement("circle",{cx:t,cy:a,r:7,fill:"#3E4751",stroke:"#FFF",strokeWidth:3,ref:r,style:c})});i.__docgenInfo={description:"",methods:[],displayName:"Point"};export{i as P};

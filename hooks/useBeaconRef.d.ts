@@ -6,5 +6,5 @@ interface UseBeaconRefConfig {
     anchor?: Point;
     offset?: Point;
 }
-declare const useBeaconRef: ({ id, anchor, offset, }: UseBeaconRefConfig) => React.RefObject<SVGGraphicsElement>;
+declare const useBeaconRef: <T extends SVGGraphicsElement>({ id, anchor, offset, }: UseBeaconRefConfig) => React.RefObject<T>;
 export default useBeaconRef;
